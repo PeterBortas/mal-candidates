@@ -1,4 +1,4 @@
-string history_file = sprintf("%s/.mal_history", getenv("HOME"));
+string history_file = combine_path(getenv("HOME"), ".mal_history");
 mixed space_re = Regexp.PCRE("^[ \t\n]*$");
 
 int is_blank(string s) {
