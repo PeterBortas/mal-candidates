@@ -8,8 +8,8 @@ int is_blank(string s) {
 void load_history() {
   catch {
     mixed f = Stdio.FILE(history_file);
-    string line;
-    while ((line = f->gets())) {
+    // second foreach statement can be empty, written out for clearity
+    foreach(f->line_iterator(); int linenr; string line) {
       if (!is_blank(line)) {
         Readline.add_history(line);
       }
